@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Blog webpage that uses CSS Flexbox</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+           /* margin-bottom: 20px; */ 
+        }
+
+        .container{
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        
+        nav{
+            background-color: darkslateblue ;
+            /* width: 100vw; */
+            padding: 20px;
+            color: white;
+            justify-items: center;
+        }
+
+        h1{
+            font-size: 2em;
+        }
+
+        .nav-list{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            /* padding: 20px; */
+        }
+
+        .nav-list li a{
+            text-decoration: none;
+            padding: 20px;
+            color: white;
+        }
+
+        li a:link{
+            color: white;
+        }
+
+        li a:hover{
+            color: darkcyan;
+        }
+
+        li a:active{
+            color: brown;
+        }
+        
+        .featured-post{
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;/* 
+            text-align: center; */
+        }
+
+        .image{
+            justify-items: start;
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        .button{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline;
+        }
+
+        .button:hover{
+            background-color: lightgrey;
+            color: darkslateblue;
+        }
+
+        .featured-post h1::before{
+            content: "⭐";
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        .flex-container{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .posts-flexbox{
+            justify-items: center;
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .text{
+            justify-items: space-between;
+        }
+
+        .footer{
+            background-color: darkslateblue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media(max-width:768px){
+            .container{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-list{
+                flex-direction: column;
+            }
+        
+            .featured-post{
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .posts-flexbox{
+                text-align: center;
+            }
+
+            .flex-container{
+                display: flex;
+                flex-direction: column;
+                justify-self: center;
+                align-items: center;
+            }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1> My Tech Blog </h1>
+            <ul class="nav-list">
+                <li class="items"><a href="/Home">Home</a></li>
+                <li class="items"><a href="/About">About</a></li>
+                <li class="items"><a href="/Contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="featured-post">
+            <img src="Rasmidah Shekul Islam - featured.PNG" alt="main pic" class="image">
+            <div class="text">
+                <h1> Featured Post: The Future of Web Development</h1>
+                <p> Discover the latest trends and innovations shaping the web development industry. From new frameworkds to emerging technologies, here's what you need to know. </p>
+                <p class="button"> Read More </p>
+            </div>
+        </main>
+
+        <h2> Recent Posts </h2>
+
+        <div class="flex-container">
+            <section class="posts-flexbox">
+                <h3> Understanding CSS Flexbox </h3>
+                <p> Flexbox is a powerful tool that allows developers to create flexible layouts with ease. Learn how to master it! </p>
+                <p class="button"> Read More </p>
+            </section>
+
+            <section class="posts-flexbox">
+                <h3> JavaScript ES2024 Features </h3>
+                <p> Explore the upcoming features in JavaScript ES2024 and how they can improve your web development workflow </p>
+                <p class="button"> Read More </p>
+            </section>
+
+            <section class="posts-flexbox">
+                <h3> Responsive Design with Flexbox </h3>
+                <p> Flexbox makes responsive design easier. Find out how you can build flexible layouts with this tool. </p>
+                <p class="button"> Read More </p>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p> &copy 2024 My Tech Blog </p>
+        </footer>
+    </div>
+</body>
+</html>
